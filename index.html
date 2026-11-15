@@ -1,131 +1,97 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Friendship World</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Friendship World | The Friendship Club</title>
 <style>
-body {
-  font-family: Arial;
-  text-align: center;
-  background: linear-gradient(pink, lavender);
-  padding: 20px;
-  color: #5b245b;
-}
-.box {
-  background: white;
-  padding: 20px;
-  margin: 20px auto;
-  border-radius: 18px;
-  max-width: 500px;
-}
-button {
-  background: #e754a6;
-  color: white;
-  border: none;
-  padding: 12px;
-  margin: 6px;
-  border-radius: 10px;
-  cursor: pointer;
-}
-input {
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid pink;
-}
+:root{--ink:#302344;--purple:#4b3269;--gold:#c49a51;--cream:#fffaf1;--pink:#f4e8ef;--card:#fffefa;--muted:#786d80}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(135deg,#fffaf1,#f4eaf4 55%,#f8f0df);color:var(--ink);font-family:Georgia,'Times New Roman',serif;min-height:100vh}
+header{padding:34px 18px 25px;text-align:center;background:linear-gradient(120deg,#38234f,#624879);color:#fff8e9;border-bottom:4px solid var(--gold)}
+.crown{font-size:28px;color:#e8c77f}h1{font-size:clamp(34px,6vw,58px);margin:8px 0;letter-spacing:1px}.subtitle{font:15px Arial,sans-serif;color:#f1e5d3;letter-spacing:2px}
+.topline{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:20px;font: bold 14px Arial}.pill{background:#ffffff18;border:1px solid #e8c77f88;padding:9px 15px;border-radius:30px}
+main{max-width:1150px;margin:auto;padding:24px 16px 60px}.welcome{background:#fffefa;border:1px solid #e6d6b8;border-radius:20px;padding:22px;text-align:center;box-shadow:0 8px 25px #45305412}
+input,select,button{font:15px Arial,sans-serif}input{padding:12px 14px;border:1px solid #d8c8d8;border-radius:12px;max-width:100%;background:white;color:var(--ink)}button{cursor:pointer;border:0;border-radius:12px;padding:11px 16px;background:var(--purple);color:white;font-weight:bold}button:hover{filter:brightness(1.12);transform:translateY(-1px)}.goldbtn{background:var(--gold);color:#281c35}
+h2{font-size:27px;text-align:center;margin:30px 0 8px}.hint{text-align:center;color:var(--muted);font:14px Arial,sans-serif;margin:0 0 18px}
+.toolbar{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:20px 0}.toolbar input{width:min(340px,100%)}.toolbar select{padding:11px;border-radius:12px;border:1px solid #d8c8d8;background:white;color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}.game{background:var(--card);border:1px solid #e6d9c5;border-radius:17px;padding:17px;box-shadow:0 5px 18px #4530540d;transition:.2s}.game:hover{transform:translateY(-4px);box-shadow:0 10px 25px #4530541c}.game .emoji{font-size:27px}.game h3{margin:9px 0 6px;font-size:18px}.game p{font:13px/1.45 Arial,sans-serif;color:var(--muted);min-height:36px}.game button{width:100%;margin-top:5px}
+.panel{display:none;background:#fffefa;border:2px solid var(--gold);border-radius:20px;padding:22px;margin:22px 0;box-shadow:0 10px 30px #45305418}.panel.show{display:block}.panel h2{margin:0 0 12px}.playarea{text-align:center;font:16px/1.6 Arial,sans-serif}.choices{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin:15px 0}.choices button{min-width:90px}.result{font-weight:bold;color:#68477e;margin:15px 0;min-height:25px}.small{font:12px Arial,sans-serif;color:var(--muted)}
+footer{text-align:center;padding:25px;color:#77677f;font:13px Arial,sans-serif}
+#board{display:grid;grid-template-columns:repeat(3,75px);gap:7px;justify-content:center;margin:15px auto}#board button{height:75px;font-size:28px;background:#f0e6f2;color:var(--purple)}
+.memory{display:grid;grid-template-columns:repeat(4,55px);gap:7px;justify-content:center}.memory button{height:55px;font-size:22px;background:#eee3f0;color:var(--purple)}
 </style>
 </head>
 <body>
-
-<h1>🌍 Friendship World ❤️</h1>
-<h3>Where Friendship Never Ends!</h3>
-<p>Stay together, stay forever!</p>
-
-<div class="box">
-<h2>👋 Welcome, Friend!</h2>
-<input id="name" placeholder="Enter your name">
-<button onclick="welcome()">Join</button>
-<h3 id="welcomeText"></h3>
-</div>
-
-<div class="box">
-<h2>🧠 Friendship Quiz</h2>
-<p>What makes a good friend?</p>
-<button onclick="answer(false)">Being famous</button>
-<button onclick="answer(true)">Kindness ❤️</button>
-<button onclick="answer(false)">Having lots of money</button>
-<h3 id="result"></h3>
-</div>
-
-<div class="box">
-<h2>🎲 Random Friendship Question</h2>
-<p id="question">Click below for a question!</p>
-<button onclick="randomQuestion()">Get a Question</button>
-</div>
-
-<div class="box">
-<h2>😂 Friendship Quotes</h2>
-<p id="quote">Friends make life beautiful!</p>
-<button onclick="newQuote()">New Quote</button>
-</div>
-
-<div class="box">
-<h2>🎨 Change Website Theme</h2>
-<button onclick="theme()">Change Colors</button>
-</div>
-
-<div class="box">
-<h2>💌 Friendship Message</h2>
-<input id="message" placeholder="Write a friendship message">
-<button onclick="sendMessage()">Send</button>
-<p id="messageResult"></p>
-</div>
-
+<header><div class="crown">✦ ♛ ✦</div><h1>Friendship World</h1><div class="subtitle">THE ULTIMATE FRIENDSHIP CLUB</div>
+<div class="topline"><span class="pill">⭐ Points: <b id="points">0</b></span><span class="pill">🏆 Level: <b id="level">1</b></span><span class="pill">🎮 50 Activities</span></div></header>
+<main>
+<section class="welcome"><h2 style="margin:0 0 8px">A little place for BIG friendship ✨</h2><p class="hint">Play, laugh, create memories, and celebrate your friends.</p><input id="nickname" maxlength="18" placeholder="Enter your nickname"><button class="goldbtn" onclick="saveName()">Join the club</button><p id="hello" class="small">Choose a nickname to personalize your club.</p></section>
+<h2>Explore the Friendship Club</h2><p class="hint">Choose any activity. Earn points and collect happy moments!</p>
+<div class="toolbar"><input id="search" placeholder="🔎 Search the 50 activities..." oninput="render()"><select id="category" onchange="render()"><option value="All">All categories</option></select><button class="goldbtn" onclick="daily()">🎁 Daily surprise</button></div>
+<section id="panel" class="panel"><h2 id="gameTitle">Game</h2><div id="playarea" class="playarea"></div><div class="choices" id="gameButtons"></div><div id="result" class="result"></div><div style="text-align:center"><button class="goldbtn" onclick="closeGame()">Close activity</button></div></section>
+<section id="grid" class="grid"></section>
+</main><footer>Made with 💜 for kind friends everywhere · Progress is saved on this device.</footer>
 <script>
-function welcome() {
- let name = document.getElementById("name").value;
- document.getElementById("welcomeText").innerText =
- name ? "Welcome to Friendship World, " + name + "! ❤️" : "Please enter your name!";
+const activities=[
+['Brain Games','🧠','Friendship Quiz'],['Brain Games','🧩','Memory Match'],['Brain Games','😀','Emoji Puzzle'],['Brain Games','❓','Riddle Time'],['Brain Games','🔤','Guess the Word'],
+['Funny Games','😂','Would You Rather'],['Funny Games','🤣','Finish the Joke'],['Funny Games','😜','Funny Questions'],['Funny Games','🔍','Guess the Emoji'],['Funny Games','🤪','Silly Challenge'],
+['Friendship Games','💜','Best Friend Quiz'],['Friendship Games','🤝','Friendship Test'],['Friendship Games','🌷','Kindness Challenge'],['Friendship Games','💌','Compliment Generator'],['Friendship Games','🎯','Friendship Bingo'],
+['Challenges','⏱️','30-Second Challenge'],['Challenges','🎲','Random Challenge'],['Challenges','💛','Good Deed Challenge'],['Challenges','🎨','Drawing Challenge'],['Challenges','📖','Story Challenge'],
+['Creative Corner','🧑‍🎨','Create an Avatar'],['Creative Corner','✨','Friendship Name Generator'],['Creative Corner','💌','Make a Friendship Card'],['Creative Corner','📚','Story Maker'],['Creative Corner','🌈','Color Challenge'],
+['Competition','🏅','Score Challenge'],['Competition','🌍','Trivia Battle'],['Competition','⚡','Quick Answers'],['Competition','🔢','Guess the Number'],['Competition','🔠','Word Scramble'],
+['Surprise Games','🎁','Mystery Box'],['Surprise Games','🎡','Lucky Wheel'],['Surprise Games','💬','Secret Message'],['Surprise Games','🎊','Random Reward'],['Surprise Games','🌟','Surprise Question'],
+['Mini Games','⭕','Tic-Tac-Toe'],['Mini Games','✊','Rock Paper Scissors'],['Mini Games','🪙','Coin Toss'],['Mini Games','🗺️','Treasure Hunt'],['Mini Games','🧠','Pattern Memory'],
+['Friendship Activities','📊','Friendship Poll'],['Friendship Activities','🌻','Appreciation Wall'],['Friendship Activities','💖','Kindness Wall'],['Friendship Activities','📸','Memory Sharing'],['Friendship Activities','🎯','Friendship Goals'],
+['Bonus Activities','📅','Daily Mission'],['Bonus Activities','🏆','Achievement Hunt'],['Bonus Activities','🗓️','Friendship Calendar'],['Bonus Activities','💭','Quote Challenge'],['Bonus Activities','😊','Happiness Meter']
+];
+let points=Number(localStorage.fwPoints||0),name=localStorage.fwName||'';
+const $=id=>document.getElementById(id);
+function update(){ $('points').textContent=points;$('level').textContent=1+Math.floor(points/50);localStorage.fwPoints=points}
+function earn(n=5){points+=n;update();$('result').textContent='⭐ +' + n + ' points! Great job!'}
+function saveName(){name=$('nickname').value.trim()||'Friend';localStorage.fwName=name;$('hello').textContent='Welcome to the club, '+name+'! 💜'}
+if(name){$('nickname').value=name;$('hello').textContent='Welcome back, '+name+'! 💜'}update();
+const cats=[...new Set(activities.map(a=>a[0]))];cats.forEach(c=>$('category').add(new Option(c,c)));
+function render(){let q=$('search').value.toLowerCase(),c=$('category').value;$('grid').innerHTML='';activities.forEach((a,i)=>{if((c==='All'||c===a[0])&&a[2].toLowerCase().includes(q)){$('grid').insertAdjacentHTML('beforeend',`<article class="game"><div class="emoji">${a[1]}</div><h3>${i+1}. ${a[2]}</h3><p>${a[0]} · A fun activity for friends.</p><button onclick="openGame(${i})">Play / Open</button></article>`)}})}
+const prompts={
+'Friendship Quiz':['What makes a great friend?','What is one kind thing you can do today?','Which matters most: trust, kindness, or laughter?'],
+'Best Friend Quiz':['What is a fun activity to do together?','What makes your friend unique?','What is a happy memory you share?'],
+'Would You Rather':['Explore a magical castle or a secret island?','Have a talking pet or a flying bicycle?','Eat only pizza for a day or only ice cream?'],
+'Riddle Time':['I have keys but no locks. What am I?','What has hands but cannot clap?','What gets wetter as it dries?'],
+'Guess the Word':['Unscramble: D N I K','Unscramble: D N E I R F','Unscramble: H G U L A'],
+'Surprise Question':['What always makes you smile?','If friendship had a color, what would it be?','What new thing would you like to try?'],
+'Kindness Challenge':['Give someone a sincere compliment.','Help with a small task today.','Thank someone who helped you.'],
+'Good Deed Challenge':['Do one helpful thing without being asked.','Share something kind with someone.','Make someone feel included.'],
+'30-Second Challenge':['Name five things that make you happy!','Name five things good friends do!','Think of three ways to help someone.'],
+'Quick Answers':['Name a favorite game.','Name something that makes you laugh.','Name one quality of a good friend.'],
+'Friendship Goals':['Choose one fun thing to do with a friend.','Plan a kind surprise.','Make time to listen to someone.'],
+'Quote Challenge':['Complete: A good friend is someone who...','Complete: Kindness costs nothing but...','Complete: Friendship makes life...']
+};
+let current=-1,secret=0,tttTurn='X',tttBoard=Array(9).fill('');
+function openGame(i){current=i;let a=activities[i];$('panel').classList.add('show');$('gameTitle').textContent=a[1]+' '+a[2];$('playarea').innerHTML='';$('gameButtons').innerHTML='';$('result').textContent='';const title=a[2];
+const btn=(label,fn)=>{let b=document.createElement('button');b.textContent=label;b.onclick=fn;$('gameButtons').appendChild(b)};
+const prompt=(arr)=>{let p=arr[Math.floor(Math.random()*arr.length)];$('playarea').textContent=p;btn('Done! +5 points',()=>earn(5));btn('New prompt',()=>openGame(i))};
+if(title==='Tic-Tac-Toe'){tttBoard=Array(9).fill('');tttTurn='X';drawBoard();$('playarea').textContent='Play X vs O on this device.'}
+else if(title==='Rock Paper Scissors'){ $('playarea').textContent='Choose your move!';['Rock','Paper','Scissors'].forEach(x=>btn(x,()=>{let y=['Rock','Paper','Scissors'][Math.floor(Math.random()*3)];let r=x===y?'It is a tie!':(x==='Rock'&&y==='Scissors'||x==='Paper'&&y==='Rock'||x==='Scissors'&&y==='Paper')?'You win!':'Computer wins!';$('result').textContent='You: '+x+' · Computer: '+y+' — '+r;if(r==='You win!')earn(10)}))}
+else if(title==='Coin Toss'){btn('Flip coin',()=>{$('playarea').textContent=Math.random()<.5?'🪙 Heads!':'🪙 Tails!';earn(3)})}
+else if(title==='Guess the Number'){secret=1+Math.floor(Math.random()*10);$('playarea').innerHTML='Guess a number from 1 to 10<br><input id="guess" type="number" min="1" max="10" style="width:100px">';btn('Check',()=>{let n=Number($('guess').value);$('result').textContent=n===secret?'Correct! You found it!':'Not that one — try again!';if(n===secret)earn(10)})}
+else if(title==='Lucky Wheel'){btn('Spin!',()=>{let prizes=[5,10,15,20,25,30];let n=prizes[Math.floor(Math.random()*prizes.length)];$('playarea').textContent='🎡 You won '+n+' points!';earn(n)})}
+else if(title==='Memory Match'){let vals=['🍓','🌟','🐱','🌈','🍓','🌟','🐱','🌈'].sort(()=>Math.random()-.5),open=[],matched=[];$('playarea').textContent='Find all matching pairs!';let box=document.createElement('div');box.className='memory';$('playarea').appendChild(box);vals.forEach((v,j)=>{let b=document.createElement('button');b.textContent='?';b.onclick=()=>{if(open.length===2||matched.includes(j)||open.includes(j))return;b.textContent=v;open.push(j);if(open.length===2){if(vals[open[0]]===vals[open[1]]){matched.push(...open);if(matched.length===8){$('result').textContent='All pairs found!';earn(15)}}else setTimeout(()=>open.forEach(k=>box.children[k].textContent='?'),650);setTimeout(()=>open=[],660)}};box.appendChild(b)})}
+else if(title==='Word Scramble'){let words=['FRIEND','KINDNESS','SMILE','LAUGHTER'],w=words[Math.floor(Math.random()*words.length)],mix=w.split('').sort(()=>Math.random()-.5).join('');$('playarea').innerHTML='Unscramble: <b>'+mix+'</b><br><input id="word" placeholder="Your answer">';btn('Check',()=>{if($('word').value.trim().toUpperCase()===w){$('result').textContent='Correct!';earn(10)}else $('result').textContent='Try again!'})}
+else if(title==='Emoji Puzzle'){prompt(['🌞 + 😊 = ?','🐱 + 👑 = ?','🌈 + ⭐ = ?','🍕 + 🎉 = ?'])}
+else if(title==='Mystery Box'||title==='Random Reward'){btn('Open the box',()=>{let gifts=['A big smile 😊','A kindness badge 🌷','10 bonus points ⭐','A friendship star ✨'];$('playarea').textContent=gifts[Math.floor(Math.random()*gifts.length)];earn(5)})}
+else if(title==='Create an Avatar'){ $('playarea').innerHTML='Pick an avatar style:<br><select id="avatar"><option>Royal friend 👑</option><option>Star explorer 🌟</option><option>Happy artist 🎨</option><option>Super helper 🦸</option></select>';btn('Create avatar',()=>{$('result').textContent='Your avatar: '+$('avatar').value;earn(5)})}
+else if(title==='Friendship Name Generator'){btn('Generate name',()=>{let x=['Golden','Happy','Magic','Royal','Sunny'],y=['Stars','Buddies','Team','Dreamers','Friends'];$('playarea').textContent=x[Math.floor(Math.random()*x.length)]+' '+y[Math.floor(Math.random()*y.length)]+' ✨';earn(5)})}
+else if(title==='Compliment Generator'){btn('Give me a compliment',()=>{$('playarea').textContent=['You make people feel welcome!','Your kindness can brighten a day!','You have a wonderful imagination!'][Math.floor(Math.random()*3)];earn(3)})}
+else if(title==='Happiness Meter'){btn('Feeling happy 😊',()=>{ $('playarea').textContent='Wonderful! Keep sharing that positive energy.';earn(3)});btn('Need a smile 🌷',()=>{$('playarea').textContent='Take a breath, think of one good thing, and be kind to yourself.';earn(3)})}
+else if(title==='Friendship Poll'){ $('playarea').textContent='What is most important in friendship?';['Trust','Kindness','Fun','Honesty'].forEach(x=>btn(x,()=>{$('result').textContent='Your vote: '+x;earn(3)}))}
+else if(title==='Secret Message'||title==='Make a Friendship Card'||title==='Appreciation Wall'||title==='Memory Sharing'||title==='Story Maker'){ $('playarea').innerHTML='Write something kind or creative:<br><textarea id="note" rows="3" style="width:95%;max-width:500px;border:1px solid #d8c8d8;border-radius:10px;padding:10px"></textarea><br><span class="small">This stays on this device only.</span>';btn('Save on this device',()=>{let v=$('note').value.trim();if(v){localStorage.setItem('fw_'+title,v);$('result').textContent='Saved on this device 💜';earn(5)}})}
+else if(prompts[title])prompt(prompts[title]);
+else prompt(['Try something kind for a friend today!','Make up a fun idea with your imagination.','Share a happy memory or a cheerful thought.','What is one thing that makes friendship special?','Think of a small challenge you can complete today.']);
 }
-
-function answer(correct) {
- document.getElementById("result").innerText =
- correct ? "Correct! Kindness makes a great friend! 🎉" : "Try again! 😊";
-}
-
-function randomQuestion() {
- let questions = [
- "What is your favorite memory with a friend?",
- "What makes someone a true friend?",
- "If you could travel with a friend, where would you go?",
- "What is the funniest thing your friends have done?"
- ];
- document.getElementById("question").innerText =
- questions[Math.floor(Math.random() * questions.length)];
-}
-
-function newQuote() {
- let quotes = [
- "A true friend is always there! ❤️",
- "Friendship makes every day brighter!",
- "Good friends make great memories!",
- "Together is always better!",
- "Friends are the family we choose!"
- ];
- document.getElementById("quote").innerText =
- quotes[Math.floor(Math.random() * quotes.length)];
-}
-
-function theme() {
- let colors = ["lightblue", "lavender", "lightyellow", "lightgreen", "pink"];
- document.body.style.background =
- colors[Math.floor(Math.random() * colors.length)];
-}
-
-function sendMessage() {
- let message = document.getElementById("message").value;
- document.getElementById("messageResult").innerText =
- message ? "Your message: " + message + " ❤️" : "Write a message first!";
-}
-</script>
-
-</body>
-</html>
+function drawBoard(){let old=$('board');if(old)old.remove();let b=document.createElement('div');b.id='board';tttBoard.forEach((v,i)=>{let x=document.createElement('button');x.textContent=v;x.onclick=()=>{if(v||tttBoard.every(Boolean))return;tttBoard[i]=tttTurn;tttTurn=tttTurn==='X'?'O':'X';drawBoard();if(checkWin()){ $('result').textContent='Player '+(tttTurn==='X'?'O':'X')+' wins!';earn(10)}else if(tttBoard.every(Boolean))$('result').textContent='It is a draw!'};b.appendChild(x)});$('playarea').appendChild(b)}
+function checkWin(){return [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]].some(a=>tttBoard[a[0]]&&tttBoard[a[0]]===tttBoard[a[1]]&&tttBoard[a[1]]===tttBoard[a[2]])}
+function daily(){let gifts=['Tell a friend one thing you appreciate.','Make someone laugh today.','Help someone with a small task.','Share a happy memory.'];$('panel').classList.add('show');$('gameTitle').textContent='🎁 Daily Surprise';$('playarea').textContent=gifts[Math.floor(Math.random()*gifts.length)];$('gameButtons').innerHTML='';$('result').textContent='';let b=document.createElement('button');b.textContent='I did it! +5 points';b.onclick=()=>earn(5);$('gameButtons').appendChild(b)}
+function closeGame(){$('panel').classList.remove('show');$('grid').scrollIntoView({behavior:'smooth',block:'start'})}
+render();
+</script>ccca
+</body></html>
