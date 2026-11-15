@@ -154,4 +154,939 @@ function sendMessage() {
 </script>
 
 </body>
+</html><!DOCTYPE html>
+<html>
+<head>
+<title>Friendship World</title>
+
+<style>
+
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(135deg, #ffb6c1, #b19cd9);
+    text-align: center;
+}
+
+header {
+    background: #ff4f81;
+    color: white;
+    padding: 25px;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+section {
+    background: white;
+    margin: 25px auto;
+    padding: 25px;
+    border-radius: 20px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 5px 15px #888;
+}
+
+button {
+    background: #ff4f81;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid pink;
+    margin: 8px;
+}
+
+button:hover {
+    background: purple;
+}
+
+footer {
+    background: #ff4f81;
+    color: white;
+    padding: 20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>❤️ Friendship World ❤️</h1>
+    <p>Where Friendship Never Ends!</p>
+</header>
+
+<section>
+    <h2>🌍 Welcome Friends!</h2>
+    <p>Welcome to our beautiful friendship website.</p>
+    <p>Friends make life happier and more beautiful!</p>
+    <h3>😊 Stay Together, Stay Forever!</h3>
+</section>
+
+<section>
+    <h2>💖 Friendship Quotes</h2>
+    <p>"A true friend is a treasure."</p>
+    <p>"Good friends make good memories."</p>
+    <p>"Friendship makes the world beautiful."</p>
+</section>
+
+<section>
+    <h2>👥 Add Your Friends</h2>
+
+    <input id="friendName" placeholder="Enter friend's name">
+
+    <br>
+
+    <button onclick="addFriend()">Add Friend</button>
+
+    <h3>Our Friends:</h3>
+
+    <ul id="friendList"></ul>
+</section>
+
+<section>
+    <h2>💌 Friendship Message</h2>
+
+    <input id="message" placeholder="Write a nice message">
+
+    <br>
+
+    <button onclick="sendMessage()">Send Message</button>
+
+    <p id="result"></p>
+</section>
+
+<footer>
+    <h3>❤️ Made With Love ❤️</h3>
+    <p>Friendship World © 2026</p>
+</footer>
+
+<script>
+
+function addFriend() {
+
+    let name = document.getElementById("friendName").value;
+
+    if(name.trim() === "") {
+        alert("Please enter a name!");
+        return;
+    }
+
+    let li = document.createElement("li");
+
+    li.innerHTML = name;
+
+    document.getElementById("friendList").appendChild(li);
+
+    document.getElementById("friendName").value = "";
+
+}
+
+function sendMessage() {
+
+    let msg = document.getElementById("message").value;
+
+    if(msg.trim() === "") {
+        alert("Please write a message!");
+        return;
+    }
+
+    document.getElementById("result").innerHTML =
+    "❤️ Your message: " + msg;
+
+    document.getElementById("message").value = "";
+
+}
+
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
+<title>Friendship World</title>
+
+<style>
+
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(135deg, #ffb6c1, #b19cd9);
+    text-align: center;
+}
+
+header {
+    background: #ff4f81;
+    color: white;
+    padding: 25px;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+section {
+    background: white;
+    margin: 25px auto;
+    padding: 25px;
+    border-radius: 20px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 5px 15px #888;
+}
+
+button {
+    background: #ff4f81;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid pink;
+    margin: 8px;
+}
+
+button:hover {
+    background: purple;
+}
+
+footer {
+    background: #ff4f81;
+    color: white;
+    padding: 20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>❤️ Friendship World ❤️</h1>
+    <p>Where Friendship Never Ends!</p>
+</header>
+
+<section>
+    <h2>🌍 Welcome Friends!</h2>
+    <p>Welcome to our beautiful friendship website.</p>
+    <p>Friends make life happier and more beautiful!</p>
+    <h3>😊 Stay Together, Stay Forever!</h3>
+</section>
+
+<section>
+    <h2>💖 Friendship Quotes</h2>
+    <p>"A true friend is a treasure."</p>
+    <p>"Good friends make good memories."</p>
+    <p>"Friendship makes the world beautiful."</p>
+</section>
+
+<section>
+    <h2>👥 Add Your Friends</h2>
+
+    <input id="friendName" placeholder="Enter friend's name">
+
+    <br>
+
+    <button onclick="addFriend()">Add Friend</button>
+
+    <h3>Our Friends:</h3>
+
+    <ul id="friendList"></ul>
+</section>
+
+<section>
+    <h2>💌 Friendship Message</h2>
+
+    <input id="message" placeholder="Write a nice message">
+
+    <br>
+
+    <button onclick="sendMessage()">Send Message</button>
+
+    <p id="result"></p>
+</section>
+
+<footer>
+    <h3>❤️ Made With Love ❤️</h3>
+    <p>Friendship World © 2026</p>
+</footer>
+
+<script>
+
+function addFriend() {
+
+    let name = document.getElementById("friendName").value;
+
+    if(name.trim() === "") {
+        alert("Please enter a name!");
+        return;
+    }
+
+    let li = document.createElement("li");
+
+    li.innerHTML = name;
+
+    document.getElementById("friendList").appendChild(li);
+
+    document.getElementById("friendName").value = "";
+
+}
+
+function sendMessage() {
+
+    let msg = document.getElementById("message").value;
+
+    if(msg.trim() === "") {
+        alert("Please write a message!");
+        return;
+    }
+
+    document.getElementById("result").innerHTML =
+    "❤️ Your message: " + msg;
+
+    document.getElementById("message").value = "";
+
+}
+
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
+<title>Friendship World</title>
+
+<style>
+
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(135deg, #ffb6c1, #b19cd9);
+    text-align: center;
+}
+
+header {
+    background: #ff4f81;
+    color: white;
+    padding: 25px;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+section {
+    background: white;
+    margin: 25px auto;
+    padding: 25px;
+    border-radius: 20px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 5px 15px #888;
+}
+
+button {
+    background: #ff4f81;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid pink;
+    margin: 8px;
+}
+
+button:hover {
+    background: purple;
+}
+
+footer {
+    background: #ff4f81;
+    color: white;
+    padding: 20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>❤️ Friendship World ❤️</h1>
+    <p>Where Friendship Never Ends!</p>
+</header>
+
+<section>
+    <h2>🌍 Welcome Friends!</h2>
+    <p>Welcome to our beautiful friendship website.</p>
+    <p>Friends make life happier and more beautiful!</p>
+    <h3>😊 Stay Together, Stay Forever!</h3>
+</section>
+
+<section>
+    <h2>💖 Friendship Quotes</h2>
+    <p>"A true friend is a treasure."</p>
+    <p>"Good friends make good memories."</p>
+    <p>"Friendship makes the world beautiful."</p>
+</section>
+
+<section>
+    <h2>👥 Add Your Friends</h2>
+
+    <input id="friendName" placeholder="Enter friend's name">
+
+    <br>
+
+    <button onclick="addFriend()">Add Friend</button>
+
+    <h3>Our Friends:</h3>
+
+    <ul id="friendList"></ul>
+</section>
+
+<section>
+    <h2>💌 Friendship Message</h2>
+
+    <input id="message" placeholder="Write a nice message">
+
+    <br>
+
+    <button onclick="sendMessage()">Send Message</button>
+
+    <p id="result"></p>
+</section>
+
+<footer>
+    <h3>❤️ Made With Love ❤️</h3>
+    <p>Friendship World © 2026</p>
+</footer>
+
+<script>
+
+function addFriend() {
+
+    let name = document.getElementById("friendName").value;
+
+    if(name.trim() === "") {
+        alert("Please enter a name!");
+        return;
+    }
+
+    let li = document.createElement("li");
+
+    li.innerHTML = name;
+
+    document.getElementById("friendList").appendChild(li);
+
+    document.getElementById("friendName").value = "";
+
+}
+
+function sendMessage() {
+
+    let msg = document.getElementById("message").value;
+
+    if(msg.trim() === "") {
+        alert("Please write a message!");
+        return;
+    }
+
+    document.getElementById("result").innerHTML =
+    "❤️ Your message: " + msg;
+
+    document.getElementById("message").value = "";
+
+}
+
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
+<title>Friendship World</title>
+
+<style>
+
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(135deg, #ffb6c1, #b19cd9);
+    text-align: center;
+}
+
+header {
+    background: #ff4f81;
+    color: white;
+    padding: 25px;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+section {
+    background: white;
+    margin: 25px auto;
+    padding: 25px;
+    border-radius: 20px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 5px 15px #888;
+}
+
+button {
+    background: #ff4f81;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid pink;
+    margin: 8px;
+}
+
+button:hover {
+    background: purple;
+}
+
+footer {
+    background: #ff4f81;
+    color: white;
+    padding: 20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>❤️ Friendship World ❤️</h1>
+    <p>Where Friendship Never Ends!</p>
+</header>
+
+<section>
+    <h2>🌍 Welcome Friends!</h2>
+    <p>Welcome to our beautiful friendship website.</p>
+    <p>Friends make life happier and more beautiful!</p>
+    <h3>😊 Stay Together, Stay Forever!</h3>
+</section>
+
+<section>
+    <h2>💖 Friendship Quotes</h2>
+    <p>"A true friend is a treasure."</p>
+    <p>"Good friends make good memories."</p>
+    <p>"Friendship makes the world beautiful."</p>
+</section>
+
+<section>
+    <h2>👥 Add Your Friends</h2>
+
+    <input id="friendName" placeholder="Enter friend's name">
+
+    <br>
+
+    <button onclick="addFriend()">Add Friend</button>
+
+    <h3>Our Friends:</h3>
+
+    <ul id="friendList"></ul>
+</section>
+
+<section>
+    <h2>💌 Friendship Message</h2>
+
+    <input id="message" placeholder="Write a nice message">
+
+    <br>
+
+    <button onclick="sendMessage()">Send Message</button>
+
+    <p id="result"></p>
+</section>
+
+<footer>
+    <h3>❤️ Made With Love ❤️</h3>
+    <p>Friendship World © 2026</p>
+</footer>
+
+<script>
+
+function addFriend() {
+
+    let name = document.getElementById("friendName").value;
+
+    if(name.trim() === "") {
+        alert("Please enter a name!");
+        return;
+    }
+
+    let li = document.createElement("li");
+
+    li.innerHTML = name;
+
+    document.getElementById("friendList").appendChild(li);
+
+    document.getElementById("friendName").value = "";
+
+}
+
+function sendMessage() {
+
+    let msg = document.getElementById("message").value;
+
+    if(msg.trim() === "") {
+        alert("Please write a message!");
+        return;
+    }
+
+    document.getElementById("result").innerHTML =
+    "❤️ Your message: " + msg;
+
+    document.getElementById("message").value = "";
+
+}
+
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
+<title>Friendship World</title>
+
+<style>
+
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(135deg, #ffb6c1, #b19cd9);
+    text-align: center;
+}
+
+header {
+    background: #ff4f81;
+    color: white;
+    padding: 25px;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+section {
+    background: white;
+    margin: 25px auto;
+    padding: 25px;
+    border-radius: 20px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 5px 15px #888;
+}
+
+button {
+    background: #ff4f81;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid pink;
+    margin: 8px;
+}
+
+button:hover {
+    background: purple;
+}
+
+footer {
+    background: #ff4f81;
+    color: white;
+    padding: 20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>❤️ Friendship World ❤️</h1>
+    <p>Where Friendship Never Ends!</p>
+</header>
+
+<section>
+    <h2>🌍 Welcome Friends!</h2>
+    <p>Welcome to our beautiful friendship website.</p>
+    <p>Friends make life happier and more beautiful!</p>
+    <h3>😊 Stay Together, Stay Forever!</h3>
+</section>
+
+<section>
+    <h2>💖 Friendship Quotes</h2>
+    <p>"A true friend is a treasure."</p>
+    <p>"Good friends make good memories."</p>
+    <p>"Friendship makes the world beautiful."</p>
+</section>
+
+<section>
+    <h2>👥 Add Your Friends</h2>
+
+    <input id="friendName" placeholder="Enter friend's name">
+
+    <br>
+
+    <button onclick="addFriend()">Add Friend</button>
+
+    <h3>Our Friends:</h3>
+
+    <ul id="friendList"></ul>
+</section>
+
+<section>
+    <h2>💌 Friendship Message</h2>
+
+    <input id="message" placeholder="Write a nice message">
+
+    <br>
+
+    <button onclick="sendMessage()">Send Message</button>
+
+    <p id="result"></p>
+</section>
+
+<footer>
+    <h3>❤️ Made With Love ❤️</h3>
+    <p>Friendship World © 2026</p>
+</footer>
+
+<script>
+
+function addFriend() {
+
+    let name = document.getElementById("friendName").value;
+
+    if(name.trim() === "") {
+        alert("Please enter a name!");
+        return;
+    }
+
+    let li = document.createElement("li");
+
+    li.innerHTML = name;
+
+    document.getElementById("friendList").appendChild(li);
+
+    document.getElementById("friendName").value = "";
+
+}
+
+function sendMessage() {
+
+    let msg = document.getElementById("message").value;
+
+    if(msg.trim() === "") {
+        alert("Please write a message!");
+        return;
+    }
+
+    document.getElementById("result").innerHTML =
+    "❤️ Your message: " + msg;
+
+    document.getElementById("message").value = "";
+
+}
+
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
+<title>Friendship World</title>
+
+<style>
+
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(135deg, #ffb6c1, #b19cd9);
+    text-align: center;
+}
+
+header {
+    background: #ff4f81;
+    color: white;
+    padding: 25px;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+section {
+    background: white;
+    margin: 25px auto;
+    padding: 25px;
+    border-radius: 20px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 5px 15px #888;
+}
+
+button {
+    background: #ff4f81;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid pink;
+    margin: 8px;
+}
+
+button:hover {
+    background: purple;
+}
+
+footer {
+    background: #ff4f81;
+    color: white;
+    padding: 20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>❤️ Friendship World ❤️</h1>
+    <p>Where Friendship Never Ends!</p>
+</header>
+
+<section>
+    <h2>🌍 Welcome Friends!</h2>
+    <p>Welcome to our beautiful friendship website.</p>
+    <p>Friends make life happier and more beautiful!</p>
+    <h3>😊 Stay Together, Stay Forever!</h3>
+</section>
+
+<section>
+    <h2>💖 Friendship Quotes</h2>
+    <p>"A true friend is a treasure."</p>
+    <p>"Good friends make good memories."</p>
+    <p>"Friendship makes the world beautiful."</p>
+</section>
+
+<section>
+    <h2>👥 Add Your Friends</h2>
+
+    <input id="friendName" placeholder="Enter friend's name">
+
+    <br>
+
+ 
+       <h3>Our Friends:</h3>
+
+    <ul id="friendList"></ul>
+</section>
+
+<section>
+    <h2>💌 Friendship Message</h2>
+
+    <input id="message" placeholder="Write a nice message">
+
+    <br>
+
+    <button onclick="sendMessage()">Send Message</button>
+
+    <p id="result"></p>
+</section>
+
+<footer>
+    <h3>❤️ Made With Love ❤️</h3>
+    <p>Friendship World © 2026</p>
+</footer>
+
+<script>
+
+function addFriend() {
+
+    let name = document.getElementById("friendName").value;
+
+    if(name.trim() === "") {
+        alert("Please enter a name!");
+        return;
+    }
+
+    let li = document.createElement("li");
+
+    li.innerHTML = name;
+
+    document.getElementById("friendList").appendChild(li);
+
+    document.getElementById("friendName").value = "";
+
+}
+
+function sendMessage() {
+
+    let msg = document.getElementById("message").value;
+
+    if(msg.trim() === "") {
+        alert("Please write a message!");
+        return;
+    }
+
+    document.getElementById("result").innerHTML =
+    "❤️ Your message: " + msg;
+
+    document.getElementById("message").value = "";
+
+}
+
+</script>
+
+</body>
 </html>
